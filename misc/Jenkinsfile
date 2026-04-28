@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v2/', 'dockerhub-keyman') {
+     docker.withRegistry('', 'dockerhub-keyman') {
        def app = docker.build("keyman91/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
